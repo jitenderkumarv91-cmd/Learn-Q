@@ -1,0 +1,66 @@
+.message-card p {
+    margin: 0;
+}
+
+.confirm-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.confirm-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.52);
+    backdrop-filter: blur(8px);
+}
+
+.confirm-modal__dialog {
+    position: relative;
+    width: min(520px, 100%);
+    padding: 28px;
+    border-radius: 28px;
+    background: rgba(255, 250, 243, 0.98);
+    border: 1px solid rgba(31, 41, 55, 0.08);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.24);
+}
+
+.confirm-modal__dialog h2 {
+    margin: 0 0 10px;
+}
+
+.confirm-modal__message,
+.confirm-modal__subject {
+    color: var(--ink-soft);
+    line-height: 1.7;
+}
+
+.confirm-modal__subject {
+    margin: 12px 0 0;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(31, 41, 55, 0.08);
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.confirm-modal__actions {
+    margin-top: 22px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 760px) {
+    .confirm-modal__dialog {
+        padding: 22px;
+    }
+
+    .confirm-modal__actions {
+        flex-direction: column;
+    }
+}

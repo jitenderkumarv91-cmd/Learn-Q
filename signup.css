@@ -1,0 +1,11 @@
+.signup-layout .auth-card {
+    max-width: 760px;
+}
+
+.wide-card {
+    justify-self: stretch;
+}
+
+.split-form small {
+    color: var(--text-soft);
+}

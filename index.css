@@ -1,0 +1,66 @@
+.search-panel {
+    margin-top: 10px;
+}
+
+.search-panel .section-heading {
+    margin-bottom: 8px;
+}
+
+.search-panel .section-heading p {
+    margin: 0;
+    color: var(--text-soft);
+}
+
+.hero-panel {
+    margin-top: 18px;
+    align-items: stretch;
+}
+
+.hero-copy {
+    display: grid;
+    align-content: start;
+    gap: 22px;
+}
+
+.hero-side {
+    align-self: stretch;
+}
+
+.info-card {
+    height: 100%;
+    background:
+        linear-gradient(180deg, rgba(31, 111, 235, 0.06), transparent 55%),
+        rgba(255, 255, 255, 0.84);
+    color: var(--text);
+}
+
+.info-card h2 {
+    color: #1D2027;
+}
+
+.info-card li {
+    color: #171E29;
+}
+
+.info-card ul {
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.9;
+}
+
+.course-section {
+    margin-top: 24px;
+}
+
+.course-card {
+    display: grid;
+    gap: 14px;
+}
+
+.course-card h3 {
+    font-size: 1.45rem;
+}
+
+.course-actions {
+    margin-top: auto;
+}

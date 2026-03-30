@@ -1,0 +1,101 @@
+.course-hero {
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.course-hero-main {
+    display: grid;
+    gap: 12px;
+}
+
+.course-hero-main .eyebrow {
+    margin-bottom: 0;
+    width: fit-content;
+}
+
+.course-hero-main h1 {
+    margin: 0;
+}
+
+.course-hero-main p {
+    margin: 0;
+}
+
+.course-inline-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.course-inline-test-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1f6feb, #124ea9);
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 12px 24px rgba(18, 78, 169, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.course-inline-test-link:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #2a7df5, #1f6feb);
+    transform: translateY(-1px);
+    box-shadow: 0 16px 28px rgba(18, 78, 169, 0.45);
+}
+
+.course-layout {
+    margin-top: 24px;
+    align-items: start;
+}
+
+.course-content {
+    padding: 32px;
+    background: #171E29;
+    border: 1px solid rgba(20, 32, 51, 0.08);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.course-sidebar {
+    display: grid;
+    gap: 18px;
+}
+
+.related-course-item + .related-course-item {
+    margin-top: 12px;
+}
+
+.side-link-note {
+    margin: 6px 0 0;
+    color: var(--text-soft);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.c-course-highlight > h2:first-of-type,
+.c-course-highlight > p:first-of-type,
+.c-course-highlight > h3:first-of-type,
+.c-course-highlight > h3:first-of-type + p {
+    color: #ffffff;
+}
+
+.c-course-highlight > h3:nth-of-type(2),
+.c-course-highlight > h3:nth-of-type(2) + p,
+.c-course-highlight > h3:nth-of-type(2) + p + ul,
+.c-course-highlight > h3:nth-of-type(2) + p + ul li,
+.c-course-highlight > h3:nth-of-type(2),
+.c-course-highlight > h3:first-of-type + p + ul,
+.c-course-highlight > h3:first-of-type + p + ul li {
+    color: #ffffff;
+}

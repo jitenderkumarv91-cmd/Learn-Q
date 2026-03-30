@@ -1,0 +1,29 @@
+.test-hero {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.test-start-card,
+.result-panel,
+.test-progress-bar {
+    margin-top: 20px;
+}
+
+.question-stack {
+    margin-top: 22px;
+}
+
+.test-start-form select option {
+    color: #111111;
+    background: #ffffff;
+}
+
+.test-heading-subline {
+    display: block;
+    font: inherit;
+    line-height: 1;
+    margin-top: 6px;
+}

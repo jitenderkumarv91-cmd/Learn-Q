@@ -1,0 +1,36 @@
+.auth-layout {
+    margin-top: 12px;
+}
+
+.auth-copy {
+    padding: 18px 6px;
+}
+
+.auth-highlights {
+    margin-top: 24px;
+}
+
+.auth-card {
+    max-width: 560px;
+    justify-self: end;
+}
+
+.role-switch {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.role-chip {
+    border: 1px solid rgba(20, 32, 51, 0.1);
+    background: rgba(255, 255, 255, 0.84);
+    color: var(--text-soft);
+    border-radius: 999px;
+    padding: 12px 14px;
+    font-weight: 800;
+}
+
+.role-chip.is-active {
+    color: #fff;
+    background: linear-gradient(135deg, var(--surface-dark), var(--brand-deep));
+}

@@ -1,0 +1,15 @@
+.profile-layout {
+    margin-top: 12px;
+    align-items: start;
+}
+
+.profile-summary {
+    position: sticky;
+    top: 118px;
+}
+
+@media (max-width: 1024px) {
+    .profile-summary {
+        position: static;
+    }
+}

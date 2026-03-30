@@ -1,0 +1,21 @@
+.dashboard-hero {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.metric-grid {
+    margin-bottom: 24px;
+}
+
+.panel-card {
+    min-height: 100%;
+}
+
+.timeline-item,
+.stack-item {
+    backdrop-filter: blur(10px);
+}

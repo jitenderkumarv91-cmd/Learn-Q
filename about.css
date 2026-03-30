@@ -1,0 +1,14 @@
+.content-hero {
+    margin-top: 12px;
+}
+
+.info-grid {
+    margin-top: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
