@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "MySQL",
+            "connectString": "mysql://avnadmin:AVNS_vvudM5ictmai_v_4jA8@mysql-cb50e23-anonymous10210-1947.j.aivencloud.com:15741/defaultdb?ssl-mode=REQUIRED",
+            "name": "ertre"
+        }
+    ]
+}
