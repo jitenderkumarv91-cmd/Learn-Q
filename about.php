@@ -18,7 +18,7 @@ require __DIR__ . '/partials/header.php';
 
 <section class="info-grid">
     <article class="info-panel">
-        <h2>Learning Philosophy</h2>
+        <h2>Learning Artifacts</h2>
         <p>Each course is delivered in a written format with sections, examples, and key takeaways so learners can move at their own pace and revisit material when needed.</p>
     </article>
     <article class="info-panel">
