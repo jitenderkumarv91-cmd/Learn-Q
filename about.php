@@ -5,8 +5,8 @@ declare(strict_types=1);
 require __DIR__ . '/includes/bootstrap.php';
 
 $pageTitle = 'About Us';
-$pageStyles = ['about.css'];
-$pageScripts = ['about.js'];
+$pageStyles = ['assets/css/pages/about.css'];
+$pageScripts = ['assets/js/pages/about.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>

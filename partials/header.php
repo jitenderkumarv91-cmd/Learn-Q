@@ -30,7 +30,7 @@ $admin = current_admin();
         <header class="site-header">
             <nav class="navbar">
                 <div class="brand">
-                <img class="brand-mark" src="<?= e(site_url('Image/logo.png')) ?>" alt="">
+                <img class="brand-mark" src="<?= e(site_url('assets/images/logo.png')) ?>" alt="">
                     <span class="brand-copy">
                         <strong><?= e(app_config('app_name')) ?></strong>
                         <small>Modern learning, clearly delivered</small>

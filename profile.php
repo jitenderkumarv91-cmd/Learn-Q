@@ -118,8 +118,8 @@ if (is_post()) {
 $student = current_student();
 
 $pageTitle = 'Profile';
-$pageStyles = ['profile.css'];
-$pageScripts = ['profile.js'];
+$pageStyles = ['assets/css/pages/profile.css'];
+$pageScripts = ['assets/js/pages/profile.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>

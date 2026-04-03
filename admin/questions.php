@@ -182,8 +182,8 @@ $questionStatement->execute($params);
 $questions = $questionStatement->fetchAll();
 
 $pageTitle = 'Manage Questions';
-$pageStyles = ['assets/css/admin.css', 'admin/questions.css'];
-$pageScripts = ['admin/questions.js'];
+$pageStyles = ['assets/css/admin.css', 'assets/css/admin/questions.css'];
+$pageScripts = ['assets/js/admin/questions.js'];
 $currentAdminPage = 'questions';
 
 require __DIR__ . '/../partials/header.php';

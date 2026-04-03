@@ -1,5 +1,5 @@
 @echo off
-set PHP_EXE=C:\xampp\php\php.exe
+set PHP_EXE=C:\Program Files\php-8.5.4-nts-Win32-vs17-x64\php.exe
 set PHP_INI=%~dp0php.ini
 
 if not exist "%PHP_EXE%" (

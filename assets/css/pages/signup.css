@@ -1,0 +1,24 @@
+.signup-layout.auth-single {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+}
+
+.signup-layout.auth-single .auth-card {
+    width: min(100%, 760px);
+    justify-self: center;
+}
+
+.auth-card-head {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.auth-card-head h1 {
+    margin: 8px 0 0;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    letter-spacing: -0.04em;
+}
+
+.split-form small {
+    color: var(--text-soft);
+}

@@ -29,8 +29,8 @@ $messageStatement = db()->query('SELECT * FROM contact_messages ORDER BY created
 $messages = $messageStatement->fetchAll();
 
 $pageTitle = 'Contact Messages';
-$pageStyles = ['assets/css/admin.css', 'admin/messages.css'];
-$pageScripts = ['admin/messages.js'];
+$pageStyles = ['assets/css/admin.css', 'assets/css/admin/messages.css'];
+$pageScripts = ['assets/js/admin/messages.js'];
 $currentAdminPage = 'messages';
 
 require __DIR__ . '/../partials/header.php';

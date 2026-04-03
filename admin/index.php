@@ -26,8 +26,8 @@ $logStatement = db()->query(
 $latestLogs = $logStatement->fetchAll();
 
 $pageTitle = 'Admin Overview';
-$pageStyles = ['assets/css/admin.css', 'admin/index.css'];
-$pageScripts = ['admin/index.js'];
+$pageStyles = ['assets/css/admin.css', 'assets/css/admin/index.css'];
+$pageScripts = ['assets/js/admin/index.js'];
 $currentAdminPage = 'overview';
 
 require __DIR__ . '/../partials/header.php';

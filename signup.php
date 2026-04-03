@@ -140,18 +140,21 @@ if (is_post()) {
 }
 
 $pageTitle = 'Signup';
-$pageStyles = ['signup.css'];
-$pageScripts = ['signup.js'];
+$pageStyles = ['assets/css/pages/auth-network.css', 'assets/css/pages/signup.css'];
+$pageScripts = ['assets/js/pages/auth-network.js', 'assets/js/pages/signup.js'];
+$bodyClass = 'auth-screen-page';
 
 require __DIR__ . '/partials/header.php';
 ?>
-<section class="auth-layout signup-layout">
-    <div class="auth-copy">
-        <span class="eyebrow">Create Your Account</span>
-        <h1>Join LearnQ and build your personal learning trail.</h1>
+<section class="auth-layout auth-single signup-layout auth-network-panel" data-auth-network>
+    <div class="auth-network-canvas-shell" aria-hidden="true">
+        <canvas class="auth-network-canvas" data-network-canvas></canvas>
     </div>
-
-    <div class="auth-card wide-card">
+    <div class="auth-card auth-card-wide auth-network-card">
+        <div class="auth-card-head">
+            <span class="eyebrow">Create Your Account</span>
+            <h1>Signup</h1>
+        </div>
         <form method="post" class="auth-form split-form" data-signup-form>
             <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
 
@@ -187,3 +190,4 @@ require __DIR__ . '/partials/header.php';
     </div>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
+

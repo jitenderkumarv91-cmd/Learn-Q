@@ -193,8 +193,8 @@ if (!empty($_GET['attempt_id'])) {
 }
 
 $pageTitle = $courseTitle . ' Test';
-$pageStyles = ['test.css'];
-$pageScripts = ['test.js'];
+$pageStyles = ['assets/css/pages/test.css'];
+$pageScripts = ['assets/js/pages/test.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>

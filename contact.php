@@ -79,8 +79,8 @@ if (is_post()) {
 }
 
 $pageTitle = 'Contact Us';
-$pageStyles = ['contact.css'];
-$pageScripts = ['contact.js'];
+$pageStyles = ['assets/css/pages/contact.css'];
+$pageScripts = ['assets/js/pages/contact.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>

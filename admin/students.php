@@ -37,8 +37,8 @@ $studentStatement = db()->query(
 $students = $studentStatement->fetchAll();
 
 $pageTitle = 'Manage Students';
-$pageStyles = ['assets/css/admin.css', 'admin/students.css'];
-$pageScripts = ['admin/students.js'];
+$pageStyles = ['assets/css/admin.css', 'assets/css/admin/students.css'];
+$pageScripts = ['assets/js/admin/students.js'];
 $currentAdminPage = 'students';
 
 require __DIR__ . '/../partials/header.php';

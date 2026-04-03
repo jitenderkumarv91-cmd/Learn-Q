@@ -42,7 +42,9 @@ ScholarGrid is a PHP and MySQL e-learning portal with written courses, student a
 3. Update MySQL credentials in [`config/database.php`](./config/database.php).
 4. If you host the project in a subfolder, set `app_url` in [`config/app.php`](./config/app.php).
 5. Start the server from the project root:
-   - `php -S localhost:8000`
+   - Windows PowerShell: `.\run-local.ps1`
+   - Windows Command Prompt: `run-local.bat`
+   - Manual fallback: `php -c php.ini -S localhost:8000 -t .`
 6. Open `http://localhost:8000/index.php`.
 
 ## Seeded Admin Login

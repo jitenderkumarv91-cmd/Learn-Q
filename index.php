@@ -5,14 +5,55 @@ declare(strict_types=1);
 require __DIR__ . '/includes/bootstrap.php';
 
 $search = trim((string) ($_GET['search'] ?? ''));
-$courses = all_courses($search);
+$catalogCourses = all_courses();
+$courses = $search === '' ? $catalogCourses : all_courses($search);
 $totalCourses = (int) db()->query('SELECT COUNT(*) FROM courses')->fetchColumn();
 $totalQuestions = (int) db()->query('SELECT COUNT(*) FROM test_questions')->fetchColumn();
 $totalStudents = (int) db()->query('SELECT COUNT(*) FROM students')->fetchColumn();
+$defaultShowcaseCourses = [
+    ['title' => 'HTML', 'slug' => 'html'],
+    ['title' => 'Python', 'slug' => 'python'],
+    ['title' => 'Linux', 'slug' => 'linux'],
+    ['title' => 'Machine Learning', 'slug' => 'machine-learning'],
+];
+$showcasePool = [];
+$showcaseCourses = [];
+$showcaseSlots = [1, 2, 3, 4];
+
+foreach ($catalogCourses as $course) {
+    $slug = (string) ($course['slug'] ?? '');
+
+    if ($slug === '') {
+        continue;
+    }
+
+    $showcasePool[$slug] = [
+        'title' => course_display_title($course),
+        'url' => site_url('course.php?slug=' . urlencode($slug)),
+    ];
+}
+
+foreach ($defaultShowcaseCourses as $defaultShowcaseCourse) {
+    $slug = $defaultShowcaseCourse['slug'];
+
+    if (!isset($showcasePool[$slug])) {
+        $showcasePool[$slug] = [
+            'title' => $defaultShowcaseCourse['title'],
+            'url' => site_url('course.php?slug=' . urlencode($slug)),
+        ];
+    }
+}
+
+if ($showcasePool !== []) {
+    $showcaseCourses = array_values($showcasePool);
+    shuffle($showcaseCourses);
+    $showcaseCourses = array_slice($showcaseCourses, 0, min(4, count($showcaseCourses)));
+    shuffle($showcaseSlots);
+}
 
 $pageTitle = 'Home';
-$pageStyles = ['index.css'];
-$pageScripts = ['index.js'];
+$pageStyles = ['assets/css/pages/index.css'];
+$pageScripts = ['assets/js/pages/index.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>
@@ -20,7 +61,7 @@ require __DIR__ . '/partials/header.php';
     <form method="get" class="search-form">
         <div class="section-heading">
             <label for="course-search" class="search-label">Find the right course faster</label>
-            <p>Search by topic and jump straight into the written lesson or assessment.</p>
+            
         </div>
         <div class="search-row">
             <input
@@ -40,7 +81,6 @@ require __DIR__ . '/partials/header.php';
     <div class="hero-copy">
         <span class="eyebrow">LearnQ Experience</span>
         <h1>Learn technical skills through a calmer, sharper, more focused interface.</h1>
-        <p>LearnQ brings together clean reading layouts, responsive assessments, and progress tracking so students can move through technical subjects without distraction.</p>
         <div class="hero-stats">
             <article>
                 <strong><?= e((string) $totalCourses) ?></strong>
@@ -57,14 +97,33 @@ require __DIR__ . '/partials/header.php';
         </div>
     </div>
     <aside class="hero-side">
-        <div class="info-card">
-            <h2>Why learners can use LearnQ more easily</h2>
-            <ul>
-                <li>Clear written lessons help learners focus on concepts without unnecessary distraction.</li>
-                <li>Each course includes guided reading and a direct path to a structured test.</li>
-                <li>Instant answer feedback helps students understand mistakes while the topic is still fresh.</li>
-                <li>The dashboard keeps scores, recent activity, and course progress visible in one place.</li>
-            </ul>
+        <div class="info-card info-card-showcase">
+            <div class="showcase-stage">
+                <div class="showcase-ripple showcase-ripple-one"></div>
+                <div class="showcase-ripple showcase-ripple-two"></div>
+                <div class="showcase-beam"></div>
+                <?php foreach ($showcaseCourses as $index => $showcaseCourse): ?>
+                    <a
+                        class="showcase-chip showcase-chip-<?= e((string) ($showcaseSlots[$index] ?? ($index + 1))) ?>"
+                        href="<?= e((string) $showcaseCourse['url']) ?>"
+                        data-full-title="<?= e((string) $showcaseCourse['title']) ?>"
+                    ><span class="showcase-chip-label"><?= e((string) $showcaseCourse['title']) ?></span></a>
+                <?php endforeach; ?>
+                <div class="showcase-core">
+                    <span class="showcase-kicker">Enrollment<br>Flow</span>
+                    <strong>Read. Test. Grow.</strong>
+                    <p>Pick a topic, build confidence quickly, and keep the momentum going.</p>
+                    <div class="showcase-meter">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="showcase-track" aria-label="Learning journey preview">
+                <span>Choose a topic</span>
+                <span>Learn faster</span>
+                <span>Check yourself</span>
+                <span>Track progress</span>
+            </div>
         </div>
     </aside>
 </section>

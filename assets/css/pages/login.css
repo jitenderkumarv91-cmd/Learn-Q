@@ -1,18 +1,23 @@
 .auth-layout {
     margin-top: 12px;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
 }
 
-.auth-copy {
-    padding: 18px 6px;
+.auth-single .auth-card {
+    width: min(100%, 520px);
+    justify-self: center;
 }
 
-.auth-highlights {
-    margin-top: 24px;
+.auth-card-head {
+    margin-bottom: 22px;
+    text-align: center;
 }
 
-.auth-card {
-    max-width: 560px;
-    justify-self: end;
+.auth-card-head h1 {
+    margin: 8px 0 0;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    letter-spacing: -0.04em;
 }
 
 .role-switch {
