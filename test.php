@@ -193,8 +193,8 @@ if (!empty($_GET['attempt_id'])) {
 }
 
 $pageTitle = $courseTitle . ' Test';
-$pageStyles = ['assets/css/pages/test.css'];
-$pageScripts = ['assets/js/pages/test.js'];
+$pageStyles = ['test.css'];
+$pageScripts = ['test.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>
@@ -299,4 +299,5 @@ require __DIR__ . '/partials/header.php';
     </section>
 <?php endif; ?>
 <?php require __DIR__ . '/partials/footer.php'; ?>
+
 

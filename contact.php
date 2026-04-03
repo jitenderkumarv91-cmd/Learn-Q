@@ -79,8 +79,8 @@ if (is_post()) {
 }
 
 $pageTitle = 'Contact Us';
-$pageStyles = ['assets/css/pages/contact.css'];
-$pageScripts = ['assets/js/pages/contact.js'];
+$pageStyles = ['contact.css'];
+$pageScripts = ['contact.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>
@@ -119,3 +119,4 @@ require __DIR__ . '/partials/header.php';
     </div>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
+

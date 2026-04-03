@@ -140,8 +140,8 @@ if (is_post()) {
 }
 
 $pageTitle = 'Signup';
-$pageStyles = ['assets/css/pages/auth-network.css', 'assets/css/pages/signup.css'];
-$pageScripts = ['assets/js/pages/auth-network.js', 'assets/js/pages/signup.js'];
+$pageStyles = ['assets/css/pages/auth-network.css', 'signup.css'];
+$pageScripts = ['assets/js/pages/auth-network.js', 'signup.js'];
 $bodyClass = 'auth-screen-page';
 
 require __DIR__ . '/partials/header.php';
@@ -190,4 +190,5 @@ require __DIR__ . '/partials/header.php';
     </div>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
+
 

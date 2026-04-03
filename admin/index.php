@@ -26,8 +26,8 @@ $logStatement = db()->query(
 $latestLogs = $logStatement->fetchAll();
 
 $pageTitle = 'Admin Overview';
-$pageStyles = ['assets/css/admin.css', 'assets/css/admin/index.css'];
-$pageScripts = ['assets/js/admin/index.js'];
+$pageStyles = ['assets/css/admin.css', 'admin/index.css'];
+$pageScripts = ['admin/index.js'];
 $currentAdminPage = 'overview';
 
 require __DIR__ . '/../partials/header.php';
@@ -96,3 +96,4 @@ require __DIR__ . '/../partials/admin_nav.php';
     </div>
 </section>
 <?php require __DIR__ . '/../partials/footer.php'; ?>
+

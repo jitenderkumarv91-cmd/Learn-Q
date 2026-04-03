@@ -18,7 +18,7 @@ $canRetry = $backUrl !== '' && !str_contains($backUrl, 'error.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= e($pageTitle) ?> | <?= e(app_config('app_name')) ?></title>
     <link rel="stylesheet" href="<?= e(site_url('assets/css/global.css')) ?>">
-    <link rel="stylesheet" href="<?= e(site_url('assets/css/pages/error.css')) ?>">
+    <link rel="stylesheet" href="<?= e(site_url('error.css')) ?>">
 </head>
 <body class="error-body">
     <main class="error-shell">
@@ -63,6 +63,7 @@ $canRetry = $backUrl !== '' && !str_contains($backUrl, 'error.php');
             </div>
         </section>
     </main>
-    <script src="<?= e(site_url('assets/js/pages/error.js')) ?>"></script>
+    <script src="<?= e(site_url('error.js')) ?>"></script>
 </body>
 </html>
+

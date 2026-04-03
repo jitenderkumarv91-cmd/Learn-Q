@@ -20,8 +20,8 @@ $relatedCourses = personalized_related_courses($studentId, $course, 3);
 $courseTitle = course_display_title($course);
 
 $pageTitle = $courseTitle;
-$pageStyles = ['assets/css/pages/course.css'];
-$pageScripts = ['assets/js/pages/course.js'];
+$pageStyles = ['course.css'];
+$pageScripts = ['course.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>
@@ -74,3 +74,4 @@ require __DIR__ . '/partials/header.php';
     </aside>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
+

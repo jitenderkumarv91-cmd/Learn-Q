@@ -134,8 +134,8 @@ $today = date('Y-m-d');
 $weekdayLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 $pageTitle = 'Activity Logs';
-$pageStyles = ['assets/css/admin.css', 'assets/css/admin/logs.css'];
-$pageScripts = ['assets/js/admin/logs.js'];
+$pageStyles = ['assets/css/admin.css', 'admin/logs.css'];
+$pageScripts = ['admin/logs.js'];
 $currentAdminPage = 'logs';
 
 require __DIR__ . '/../partials/header.php';
@@ -337,3 +337,4 @@ require __DIR__ . '/../partials/admin_nav.php';
     </div>
 </div>
 <?php require __DIR__ . '/../partials/footer.php'; ?>
+

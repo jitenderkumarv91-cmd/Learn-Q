@@ -118,8 +118,8 @@ if (is_post()) {
 $student = current_student();
 
 $pageTitle = 'Profile';
-$pageStyles = ['assets/css/pages/profile.css'];
-$pageScripts = ['assets/js/pages/profile.js'];
+$pageStyles = ['profile.css'];
+$pageScripts = ['profile.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>
@@ -169,3 +169,4 @@ require __DIR__ . '/partials/header.php';
     </div>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
+

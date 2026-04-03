@@ -52,8 +52,8 @@ if ($showcasePool !== []) {
 }
 
 $pageTitle = 'Home';
-$pageStyles = ['assets/css/pages/index.css'];
-$pageScripts = ['assets/js/pages/index.js'];
+$pageStyles = ['index.css'];
+$pageScripts = ['index.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>
@@ -159,3 +159,4 @@ require __DIR__ . '/partials/header.php';
     <p class="empty-state is-hidden" data-empty-state>No courses match your search.</p>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
+

@@ -56,8 +56,8 @@ $logStatement->execute(['student_id' => $studentId]);
 $recentLogs = $logStatement->fetchAll();
 
 $pageTitle = 'Dashboard';
-$pageStyles = ['assets/css/pages/dashboard.css'];
-$pageScripts = ['assets/js/pages/dashboard.js'];
+$pageStyles = ['dashboard.css'];
+$pageScripts = ['dashboard.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>
@@ -173,3 +173,4 @@ require __DIR__ . '/partials/header.php';
     </div>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
+
