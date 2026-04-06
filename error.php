@@ -66,3 +66,4 @@ $canRetry = $backUrl !== '' && !str_contains($backUrl, 'error.php');
     <script src="<?= e(site_url('error.js')) ?>"></script>
 </body>
 </html>
+

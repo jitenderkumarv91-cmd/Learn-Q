@@ -96,3 +96,4 @@ require __DIR__ . '/../partials/admin_nav.php';
     </div>
 </section>
 <?php require __DIR__ . '/../partials/footer.php'; ?>
+

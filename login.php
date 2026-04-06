@@ -88,28 +88,21 @@ if (is_post()) {
 }
 
 $pageTitle = 'Login';
-$pageStyles = ['login.css'];
-$pageScripts = ['login.js'];
+$pageStyles = ['assets/css/pages/auth-network.css', 'login.css'];
+$pageScripts = ['assets/js/pages/auth-network.js', 'login.js'];
+$bodyClass = 'auth-screen-page';
 
 require __DIR__ . '/partials/header.php';
 ?>
-<section class="auth-layout">
-    <div class="auth-copy">
-        <span class="eyebrow">Secure Sign In</span>
-        <h1>Return to your learning workspace.</h1>
-        <div class="auth-highlights">
-            <article>
-                <strong>Role-based access</strong>
-                <p>Students and admins are routed to dedicated spaces immediately after login.</p>
-            </article>
-            <article>
-                <strong>Protected resources</strong>
-                <p>Course pages and tests require an authenticated session before access is granted.</p>
-            </article>
-        </div>
+<section class="auth-layout auth-single auth-network-panel" data-auth-network>
+    <div class="auth-network-canvas-shell" aria-hidden="true">
+        <canvas class="auth-network-canvas" data-network-canvas></canvas>
     </div>
-
-    <div class="auth-card">
+    <div class="auth-card auth-network-card">
+        <div class="auth-card-head">
+            <span class="eyebrow">Secure Sign In</span>
+            <h1>Login</h1>
+        </div>
         <form method="post" class="auth-form">
             <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
             <input type="hidden" name="next" value="<?= e($nextPath) ?>">
@@ -131,8 +124,8 @@ require __DIR__ . '/partials/header.php';
             </label>
             <button class="button button-primary button-block" type="submit">Login</button>
         </form>
-        <p class="auth-note">New learner? <a href="<?= e(site_url('signup.php')) ?>">Create an account</a>.</p>
-        <p class="auth-note muted">Don't just dream—do it. It's time to take your skills to the next level with LearnQ. Start today—right now!</p>
     </div>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
+
+

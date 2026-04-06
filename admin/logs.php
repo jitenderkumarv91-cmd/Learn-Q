@@ -337,3 +337,4 @@ require __DIR__ . '/../partials/admin_nav.php';
     </div>
 </div>
 <?php require __DIR__ . '/../partials/footer.php'; ?>
+

@@ -31,3 +31,4 @@ require __DIR__ . '/partials/header.php';
     </article>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
+
