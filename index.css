@@ -490,3 +490,108 @@
         animation: none !important;
     }
 }
+
+.home-search-page .navbar.has-course-search {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.navbar-course-search {
+    position: relative;
+    flex: 1 1 360px;
+    max-width: 430px;
+    min-width: 240px;
+}
+
+.navbar-course-search-box {
+    position: relative;
+}
+
+.navbar-course-search-input {
+    width: 100%;
+    padding: 13px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(11, 15, 22, 0.78);
+    color: var(--text);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.navbar-course-search-input::placeholder {
+    color: rgba(168, 179, 195, 0.76);
+}
+
+.navbar-course-search-input:focus {
+    border-color: rgba(31, 111, 235, 0.42);
+    box-shadow: 0 0 0 4px rgba(31, 111, 235, 0.14);
+    transform: translateY(-1px);
+}
+
+.navbar-course-search-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    z-index: 35;
+    display: grid;
+    gap: 6px;
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(17, 20, 26, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-sm);
+}
+
+.navbar-course-search-suggestion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 16px;
+    color: var(--text-soft);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-course-search-suggestion span {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.navbar-course-search-suggestion small {
+    color: var(--text-soft);
+    font-size: 0.78rem;
+}
+
+.navbar-course-search-suggestion:hover,
+.navbar-course-search-suggestion:focus-visible {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    transform: translateX(2px);
+    outline: none;
+}
+
+@media (max-width: 1024px) {
+    .home-search-page .navbar.has-course-search .brand {
+        order: 1;
+    }
+
+    .home-search-page .navbar.has-course-search .nav-toggle {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .home-search-page .navbar.has-course-search .navbar-course-search {
+        order: 3;
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .home-search-page .navbar.has-course-search .nav-links {
+        order: 4;
+        width: 100%;
+    }
+}

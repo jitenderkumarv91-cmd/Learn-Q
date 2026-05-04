@@ -100,7 +100,6 @@ require __DIR__ . '/partials/header.php';
     </div>
     <div class="auth-card auth-network-card">
         <div class="auth-card-head">
-            <span class="eyebrow">Secure Sign In</span>
             <h1>Login</h1>
         </div>
         <form method="post" class="auth-form">

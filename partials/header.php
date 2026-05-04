@@ -8,6 +8,9 @@ $bodyClass = $bodyClass ?? '';
 $flashes = get_flashes();
 $student = current_student();
 $admin = current_admin();
+$showNavbarCourseSearch = $showNavbarCourseSearch ?? false;
+$navbarCourseSearchValue = $navbarCourseSearchValue ?? '';
+$navbarCourseSuggestions = is_array($navbarCourseSuggestions ?? null) ? $navbarCourseSuggestions : [];
 ?>
 <!doctype html>
 <html lang="en">
@@ -28,14 +31,44 @@ $admin = current_admin();
 <body class="<?= e($bodyClass) ?>">
     <div class="site-shell">
         <header class="site-header">
-            <nav class="navbar">
+            <nav class="navbar<?= $showNavbarCourseSearch ? ' has-course-search' : '' ?>">
                 <div class="brand">
                 <img class="brand-mark" src="<?= e(site_url('Image/logo.png')) ?>" alt="">
                     <span class="brand-copy">
                         <strong><?= e(app_config('app_name')) ?></strong>
                         <small>Modern learning, clearly delivered</small>
                     </span>
-                </div>  
+                </div>
+                <?php if ($showNavbarCourseSearch): ?>
+                    <div class="navbar-course-search" data-navbar-search>
+                        <div class="navbar-course-search-box">
+                            <input
+                                id="navbar-course-search"
+                                class="navbar-course-search-input"
+                                type="search"
+                                value="<?= e((string) $navbarCourseSearchValue) ?>"
+                                placeholder="Search courses"
+                                autocomplete="off"
+                                spellcheck="false"
+                                aria-label="Search courses"
+                                data-course-search
+                            >
+                            <div class="navbar-course-search-dropdown is-hidden" data-search-dropdown>
+                                <?php foreach ($navbarCourseSuggestions as $suggestion): ?>
+                                    <a
+                                        class="navbar-course-search-suggestion is-hidden"
+                                        href="<?= e((string) ($suggestion['url'] ?? '#')) ?>"
+                                        data-search-suggestion
+                                        data-title="<?= e(strtolower((string) ($suggestion['title'] ?? ''))) ?>"
+                                    >
+                                        <span><?= e((string) ($suggestion['title'] ?? '')) ?></span>
+                                        <small><?= e((string) ($suggestion['meta'] ?? 'Open course')) ?></small>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
                 <button class="nav-toggle" type="button" aria-label="Toggle menu" data-nav-toggle>
                     <span></span>
                     <span></span>
@@ -69,4 +102,3 @@ $admin = current_admin();
             <?php endif; ?>
         </header>
         <main class="page-shell">
-
