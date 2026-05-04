@@ -6,7 +6,7 @@ require __DIR__ . '/includes/bootstrap.php';
 
 $search = trim((string) ($_GET['search'] ?? ''));
 $catalogCourses = all_courses();
-$courses = $search === '' ? $catalogCourses : all_courses($search);
+$courses = $catalogCourses;
 $totalCourses = (int) db()->query('SELECT COUNT(*) FROM courses')->fetchColumn();
 $totalQuestions = (int) db()->query('SELECT COUNT(*) FROM test_questions')->fetchColumn();
 $totalStudents = (int) db()->query('SELECT COUNT(*) FROM students')->fetchColumn();
@@ -19,6 +19,10 @@ $defaultShowcaseCourses = [
 $showcasePool = [];
 $showcaseCourses = [];
 $showcaseSlots = [1, 2, 3, 4];
+$showNavbarCourseSearch = true;
+$navbarCourseSearchValue = $search;
+$navbarCourseSuggestions = [];
+$bodyClass = 'home-search-page';
 
 foreach ($catalogCourses as $course) {
     $slug = (string) ($course['slug'] ?? '');
@@ -27,9 +31,17 @@ foreach ($catalogCourses as $course) {
         continue;
     }
 
+    $courseTitle = course_display_title($course);
+
     $showcasePool[$slug] = [
-        'title' => course_display_title($course),
+        'title' => $courseTitle,
         'url' => site_url('course.php?slug=' . urlencode($slug)),
+    ];
+
+    $navbarCourseSuggestions[] = [
+        'title' => $courseTitle,
+        'url' => site_url('course.php?slug=' . urlencode($slug)),
+        'meta' => trim((string) ($course['level'] ?? 'Course')),
     ];
 }
 
@@ -57,26 +69,6 @@ $pageScripts = ['index.js'];
 
 require __DIR__ . '/partials/header.php';
 ?>
-<section class="search-panel">
-    <form method="get" class="search-form">
-        <div class="section-heading">
-            <label for="course-search" class="search-label">Find the right course faster</label>
-            
-        </div>
-        <div class="search-row">
-            <input
-                id="course-search"
-                name="search"
-                type="search"
-                value="<?= e($search) ?>"
-                placeholder="Search HTML, Python, Linux, Ethical Hacking..."
-                data-course-search
-            >
-            <button class="button button-primary" type="submit">Search</button>
-        </div>
-    </form>
-</section>
-
 <section class="hero-panel">
     <div class="hero-copy">
         <span class="eyebrow">LearnQ Experience</span>
@@ -134,7 +126,6 @@ require __DIR__ . '/partials/header.php';
             <span class="eyebrow">Course Catalog</span>
             <h2>Browse the full LearnQ library</h2>
         </div>
-        <p><?= $search !== '' ? e('Showing results for "' . $search . '"') : 'Every card gives learners a fast read on level, reading time, and next action.' ?></p>
     </div>
 
     <div class="course-grid" data-course-grid>
@@ -159,4 +150,3 @@ require __DIR__ . '/partials/header.php';
     <p class="empty-state is-hidden" data-empty-state>No courses match your search.</p>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
-
